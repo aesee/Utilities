@@ -8,16 +8,22 @@
 #include <iostream>
 using namespace std;
 
-# define stack_pointer %x2 // pointer on register ???
-# define result %x28	   // result of execution
+//# define stack_pointer %x2 // pointer on register ???
+//# define result %x28	   // result of execution
 
-# define N 3
+//# define N 3
+
+int result;
+int N = 3;
 
 int main();
 void error(int number);
+void write_result(int number);
 
 int main()
 {
+	asm(" ld x2, N ");
+	
 	try
 	{
 		int stack[3*N];
@@ -33,10 +39,14 @@ int main()
 				error(2);
 		}
 	}
-	catch()
+	catch(int err)
 	{
 		error(1);
 	}
+	
+	while (true)
+		{ asm(" nop "); }
+	
 	return 0;
 }
 
@@ -45,12 +55,18 @@ void error(int number)
 	switch(number)
 	{
 		case 1:
-			result = 0x01;
+			write_result(0x01);
 			break;
 		case 2:
-			result = 0x11;
+			write_result(0x11);
 			break;
 		default:
-			result = 0x00;
+			write_result(0x00);
 	}
+}
+
+void write_result(int number)
+{
+	result = number;
+	asm(" ld x31, result ");
 }
