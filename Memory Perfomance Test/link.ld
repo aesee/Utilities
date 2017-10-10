@@ -13,6 +13,8 @@ SECTIONS
   . = 0x10020000;
   .test : {*(.test)}
   . = 0x10030000;
+  .result : { *(.result)}
+  . = 0x10900000;
   __stack_pointer$ = .;
   __global_pointer$ = .;
   _edata = .;
