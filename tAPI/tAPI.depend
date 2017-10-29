@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1508737788 source:c:\users\sarapulovav\documents\cpp\tapi\main.cpp
+	<iostream>
+	"module.h"
+	"gost.h"
+	"uart.h"
+	<list>
+	<vector>
+	<memory>
+
+1508737990 source:c:\users\sarapulovav\documents\cpp\tapi\gost.cpp
+	"gost.h"
+
+1508738298 c:\users\sarapulovav\documents\cpp\tapi\gost.h
+	"module.h"
+
+1508736082 c:\users\sarapulovav\documents\cpp\tapi\module.h
+
+1508738298 source:c:\users\sarapulovav\documents\cpp\tapi\module.cpp
+	"module.h"
+
+1508736287 source:c:\users\sarapulovav\documents\cpp\tapi\uart.cpp
+	"uart.h"
+
+1508738038 c:\users\sarapulovav\documents\cpp\tapi\uart.h
+	"module.h"
+
